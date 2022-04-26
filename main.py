@@ -61,6 +61,12 @@ aynalama = cv2.copyMakeBorder(ilkresim,75,75,100,125,cv2.BORDER_REFLECT)
 #uzatma
 
 uzatma = cv2.copyMakeBorder(ilkresim,25,25,25,25,cv2.BORDER_REPLICATE)
-cv2.imshow("aynali",uzatma)
+#cv2.imshow("aynali",uzatma)
+
+#grileştirme
+
+gri= cv2.cvtColor(ilkresim,cv2.COLOR_BGR2GRAY)#GRİLEŞTİ
+
+cv2.imshow("gri",gri)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
