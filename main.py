@@ -101,5 +101,12 @@ medyanfilter = cv2.medianBlur(ilkresim,3)#3x3 olduğunu belirtmek için 3 dedik 
 
 cv2.imshow("medyan filter",medyanfilter)
 
+
+#gaus filtreleme
+
+gaus = cv2.GaussianBlur(ilkresim,(3,3),0)
+
+cv2.imshow("gaus",gaus)
+
 cv2.waitKey(0)
 cv2.destroyAllWindows()
