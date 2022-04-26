@@ -66,7 +66,26 @@ uzatma = cv2.copyMakeBorder(ilkresim,25,25,25,25,cv2.BORDER_REPLICATE)
 #grileştirme
 
 gri= cv2.cvtColor(ilkresim,cv2.COLOR_BGR2GRAY)#GRİLEŞTİ
+# boyutların özellikleri alma
+yukseklik,genislik,kanalsayisi = ilkresim.shape
+yukseklikg,genislikg = gri.shape
+#print("yükseklik: "+ str(yukseklikg)+" genislik: "+str(genislikg))
+#cv2.imshow("gri",gri)
 
-cv2.imshow("gri",gri)
+#görüntü piramitleri
+
+ikikatbuyuk = cv2.pyrUp(ilkresim)#boyutları 2 katına çıkarıyor
+
+ikikatkucuk = cv2.pyrDown(ilkresim)
+#cv2.imshow("kucuk",ikikatkucuk)
+#cv2.imshow("orijinal",ilkresim)
+#cv2.imshow("iki kat",ikikat)
+
+#numpy kullanma
+
+resim = np.zeros((300,300,3),dtype="uint8")#kendi resmimizi oluşturduk
+#zeros fonskiyonu tüm kapsamları 0 yapıyor her pikseli 0 yapıyor.
+print(resim)
+
 cv2.waitKey(0)
 cv2.destroyAllWindows()
