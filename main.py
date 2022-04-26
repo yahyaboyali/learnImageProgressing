@@ -49,8 +49,18 @@ ilkresim = cv2.imread("lena-std.tif")
 kesitresim = ilkresim[50:150,300:400] #y, x kordinatları
 
 #kesiti istediğimiz bir kısma yapıştırma
-ilkresim[0:100,0:100]=kesitresim
+#ilkresim[0:100,0:100]=kesitresim
 #cv2.imshow("kesit",ilkresim)
-print(ilkresim.shape[0])
+#print(ilkresim.shape[0]) # 012 şeklinde değerlere ayrı ayrı
+# erişebiliyouz uzunluk genişlik ve renk durumu
+
+#aynalama
+
+aynalama = cv2.copyMakeBorder(ilkresim,75,75,100,125,cv2.BORDER_REFLECT)
+
+#uzatma
+
+uzatma = cv2.copyMakeBorder(ilkresim,25,25,25,25,cv2.BORDER_REPLICATE)
+cv2.imshow("aynali",uzatma)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
