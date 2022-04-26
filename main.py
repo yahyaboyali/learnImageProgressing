@@ -88,11 +88,18 @@ resim = np.zeros((300,300,3),dtype="uint8")#kendi resmimizi oluşturduk
 #ilk parametresi shape boyut veriyoruz diğeri de data type
 
 #print(resim)
-# mean filter kullanımı 
+# mean filter kullanımı
 cv2.imshow("orijinal resim",ilkresim)
 
-meanfilter = cv2.blur(ilkresim,(5,5))
+meanfilter = cv2.blur(ilkresim,(3,3))#kaça kaç olcak onu veriyoruz
 
 cv2.imshow("3x3 mean filter",meanfilter)
+
+#medyan filter
+
+medyanfilter = cv2.medianBlur(ilkresim,3)#3x3 olduğunu belirtmek için 3 dedik yeterli
+
+cv2.imshow("medyan filter",medyanfilter)
+
 cv2.waitKey(0)
 cv2.destroyAllWindows()
