@@ -5,7 +5,7 @@ import numpy as np
 ilkresim = cv2.imread("lena-std.tif")
 
 
-cv2.imshow("deneme",ilkresim)
+#cv2.imshow("deneme",ilkresim)
 #print(ilkresim) matris karşılığıı böyle alıyoruz
 
 #resmin boyutunu öğrenme
@@ -43,5 +43,14 @@ cv2.imshow("deneme",ilkresim)
 #ilkresim[200:300,200:300,0] = 255 #x, y değer aralıları verip ilerliyoruz
 
 #cv2.imshow("blue 255",ilkresim)
+
+# belirli bir bölümü almak istiyoruz resim içinden yeni kesit alıyoruz
+
+kesitresim = ilkresim[50:150,300:400] #y, x kordinatları
+
+#kesiti istediğimiz bir kısma yapıştırma
+ilkresim[0:100,0:100]=kesitresim
+#cv2.imshow("kesit",ilkresim)
+print(ilkresim.shape[0])
 cv2.waitKey(0)
 cv2.destroyAllWindows()
