@@ -32,6 +32,16 @@ cv2.imshow("deneme",ilkresim)
 #ilkresim[112,45] = [255,255,255]
 #for i in range(100): # çizgi çizdi i boyunca
  #   ilkresim[70,i]=[255,255,255]
-cv2.imshow("pixel degisti",ilkresim)
+
+#efekt ekleme
+
+#ilkresim[:,:,0]=255# blue özelliğini 255 yaptık
+#: : derken resmin tüm her tarafına efekti uygula diyoruz 3. paremetre
+# hangi katmanı seçtiğimiz 0 blue, 1 green, 2 red olacak şekilde
+# belirli bir alana efekt
+
+#ilkresim[200:300,200:300,0] = 255 #x, y değer aralıları verip ilerliyoruz
+
+#cv2.imshow("blue 255",ilkresim)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
