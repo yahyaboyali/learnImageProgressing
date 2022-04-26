@@ -22,5 +22,9 @@ cv2.imshow("deneme",ilkresim)
 
 #print(ilkresim[(230,80)])#230 a 80 deki bgr değerini alıyor
 
+print("resmin boyutu: "+ str(ilkresim.size))
+print("resmin özellikleri: "+ str(ilkresim.shape))
+
+print("resmin veri tipi: "+ str(ilkresim.dtype))
 cv2.waitKey(0)
 cv2.destroyAllWindows()
