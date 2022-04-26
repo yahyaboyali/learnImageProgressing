@@ -81,11 +81,18 @@ ikikatkucuk = cv2.pyrDown(ilkresim)
 #cv2.imshow("orijinal",ilkresim)
 #cv2.imshow("iki kat",ikikat)
 
-#numpy kullanma
+#numpy kullanma zeros fonskiyonu
 
 resim = np.zeros((300,300,3),dtype="uint8")#kendi resmimizi oluşturduk
 #zeros fonskiyonu tüm kapsamları 0 yapıyor her pikseli 0 yapıyor.
-print(resim)
+#ilk parametresi shape boyut veriyoruz diğeri de data type
 
+#print(resim)
+# mean filter kullanımı 
+cv2.imshow("orijinal resim",ilkresim)
+
+meanfilter = cv2.blur(ilkresim,(5,5))
+
+cv2.imshow("3x3 mean filter",meanfilter)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
